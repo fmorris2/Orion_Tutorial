@@ -15,6 +15,7 @@ public class RSGuideDialogue extends TutorialWorker
 	public void work()
 	{
 		script.log(this, false, "Talk to RuneScape Guide");
+		iFact.dialogue("Talk-to", "RuneScape Guide", 12, random(1, 3)).execute();
 	}
 
 	@Override
