@@ -17,4 +17,9 @@ public abstract class TutorialWorker extends Worker<OrionTutorial>
 	@Override
 	public boolean needsRepeat()
 	{return false;};
+	
+	public String toString()
+	{
+		return super.toString();
+	}
 }
