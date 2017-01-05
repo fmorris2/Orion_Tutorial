@@ -32,7 +32,7 @@ public class OrionTutorial extends Mission
 	@Override
 	public String getCurrentTaskName()
 	{
-		return current.toString();
+		return current == null ? "Initializing" : current.toString();
 	}
 
 	@Override
