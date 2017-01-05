@@ -4,6 +4,7 @@ import java.util.Comparator;
 import java.util.List;
 
 import org.OrionTutorial;
+import org.data.TutorialState;
 import org.osbot.rs07.api.map.Area;
 import org.osbot.rs07.api.map.Position;
 import org.osbot.rs07.event.WalkingEvent;
@@ -35,8 +36,10 @@ public class MakeFire extends TutorialWorker
 					(execute(new WalkingEvent(closestFree)).hasFinished() 
 							&& Timing.waitCondition(() -> myPosition().equals(closestFree), 4000)))
 			{
+				final int CONF_CACHE = configs.get(TutorialState.CONFIG_ID);
+				
 				if(itemUtils.itemOnItem("Tinderbox", "Logs") && Timing.waitCondition(() -> myPlayer().isAnimating(), 2500))
-					Timing.waitCondition(() -> !myPlayer().isAnimating(), 6500);
+					Timing.waitCondition(() -> CONF_CACHE != configs.get(TutorialState.CONFIG_ID), 6500);
 			}
 		}
 		
