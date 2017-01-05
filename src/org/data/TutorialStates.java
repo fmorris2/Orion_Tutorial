@@ -4,6 +4,8 @@ import org.OrionTutorial;
 import org.workers.TutorialWorker;
 import org.workers.impl.TutorialDone;
 import org.workers.impl.rs_guide.CharacterDesign;
+import org.workers.impl.rs_guide.ClickOptionsTab;
+import org.workers.impl.rs_guide.ExitRunescapeGuide;
 import org.workers.impl.rs_guide.RSGuideDialogue;
 
 public class TutorialStates
@@ -18,6 +20,7 @@ public class TutorialStates
 		STATES = new TutorialState[]
 		{
 			ts(new CharacterDesign(script), 0), ts(new RSGuideDialogue(script), 0, 7),
+			ts(new ClickOptionsTab(script), 3), ts(new ExitRunescapeGuide(script), 10),
 			
 			
 			
