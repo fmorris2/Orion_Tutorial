@@ -57,6 +57,9 @@ public class OrionTutorial extends Mission
 	public int execute()
 	{
 		current = states.getValid();
+		if(current != null)
+			current.execute();
+		
 		return 600;
 	}
 

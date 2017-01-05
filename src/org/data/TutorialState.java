@@ -28,6 +28,11 @@ public class TutorialState
 		return false;
 	}
 	
+	public void execute()
+	{
+		worker.work();
+	}
+	
 	public String toString()
 	{
 		return worker.toString();
