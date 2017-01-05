@@ -26,11 +26,5 @@ public class TutorialState
 				return true;
 		
 		return false;
-	}
-	
-	public String toString()
-	{
-		return worker.getClass().getName();
-	}
-	
+	}	
 }
