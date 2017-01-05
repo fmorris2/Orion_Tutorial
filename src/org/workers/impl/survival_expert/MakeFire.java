@@ -6,6 +6,7 @@ import java.util.List;
 import org.OrionTutorial;
 import org.osbot.rs07.api.map.Area;
 import org.osbot.rs07.api.map.Position;
+import org.osbot.rs07.event.WalkingEvent;
 import org.workers.TutorialWorker;
 
 import viking.api.Timing;
@@ -32,7 +33,8 @@ public class MakeFire extends TutorialWorker
 		if(closestFree != null)
 		{
 			if(myPosition().equals(closestFree) ||
-					(walkUtils.walkTo(closestFree) && Timing.waitCondition(() -> myPosition().equals(closestFree), 4000)))
+					(execute(new WalkingEvent(closestFree)).hasFinished() 
+							&& Timing.waitCondition(() -> myPosition().equals(closestFree), 4000)))
 			{
 				if(itemUtils.itemOnItem("Tinderbox", "Logs") && Timing.waitCondition(() -> myPlayer().isAnimating(), 2500))
 					Timing.waitCondition(() -> !inventory.contains("Logs"), 6500);
