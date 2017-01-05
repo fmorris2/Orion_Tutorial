@@ -14,12 +14,13 @@ public class RSGuideDialogue extends TutorialWorker
 	@Override
 	public void work()
 	{
+		script.log(this, false, "Talk to RuneScape Guide");
 	}
 
 	@Override
 	public boolean shouldExecute()
 	{
-		return true;
+		return !widgets.isVisible(CharacterDesign.INTER_MASTER);
 	}
 
 }

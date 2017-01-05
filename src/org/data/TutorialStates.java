@@ -3,7 +3,7 @@ package org.data;
 import org.OrionTutorial;
 import org.workers.TutorialWorker;
 import org.workers.impl.TutorialDone;
-import org.workers.impl.rs_guide.CharDesign;
+import org.workers.impl.rs_guide.CharacterDesign;
 import org.workers.impl.rs_guide.RSGuideDialogue;
 
 public class TutorialStates
@@ -17,7 +17,7 @@ public class TutorialStates
 		this.script = script;
 		STATES = new TutorialState[]
 		{
-			ts(new CharDesign(script), 0), ts(new RSGuideDialogue(script), 0),
+			ts(new CharacterDesign(script), 0), ts(new RSGuideDialogue(script), 0, 7),
 			
 			
 			
@@ -38,7 +38,7 @@ public class TutorialStates
 		return null;
 	}
 	
-	private TutorialState ts(TutorialWorker worker, int vals)
+	private TutorialState ts(TutorialWorker worker, int... vals)
 	{
 		return new TutorialState(worker, vals);
 	}
