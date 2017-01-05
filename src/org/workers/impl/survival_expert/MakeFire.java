@@ -46,7 +46,7 @@ public class MakeFire extends TutorialWorker
 		tiles.sort(posComparator());
 		
 		for(Position p : tiles)
-			if(objects.get(p.getX(), p.getY()).isEmpty())
+			if(!objectUtils.isOnTile("Fire", p))
 				return p;
 		
 		return null;
