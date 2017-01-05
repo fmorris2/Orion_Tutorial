@@ -28,8 +28,10 @@ public class MakeFire extends TutorialWorker
 	{
 		script.log(this, false, "Make fire");
 		Position closestFree = getClosestFree();
+		script.log(this, false, "Closest free: " + closestFree);
 		if(closestFree != null)
 		{
+			script.log(this, false, "walk to closestFree");
 			if(walking.walk(closestFree) && Timing.waitCondition(() -> myPosition().equals(closestFree), 4000))
 			{
 				if(itemUtils.itemOnItem("Tinderbox", "Logs") && Timing.waitCondition(() -> myPlayer().isAnimating(), 2500))
@@ -46,7 +48,7 @@ public class MakeFire extends TutorialWorker
 		tiles.sort(posComparator());
 		
 		for(Position p : tiles)
-			if(!objectUtils.isOnTile("Fire", p))
+			if(posUtils.isWalkable(p) && !objectUtils.isOnTile("Fire", p))
 				return p;
 		
 		return null;
