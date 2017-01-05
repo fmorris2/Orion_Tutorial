@@ -1,13 +1,17 @@
 package org;
 
+import org.data.TutorialState;
+import org.data.TutorialStates;
+
 import viking.framework.goal.GoalList;
-import viking.framework.goal.impl.InfiniteGoal;
 import viking.framework.mission.Mission;
 import viking.framework.script.VikingScript;
 
 public class OrionTutorial extends Mission
-{
-
+{	
+	private TutorialStates states;
+	private TutorialState current;
+	
 	public OrionTutorial(VikingScript script)
 	{
 		super(script);
@@ -16,7 +20,7 @@ public class OrionTutorial extends Mission
 	@Override
 	public boolean canEnd()
 	{
-		return false;
+		return states.STATES[states.STATES.length - 1].isValid(); //check the tutorial done state
 	}
 
 	@Override
@@ -28,19 +32,19 @@ public class OrionTutorial extends Mission
 	@Override
 	public String getCurrentTaskName()
 	{
-		return null;
+		return current.toString();
 	}
 
 	@Override
 	public String getEndMessage()
 	{
-		return null;
+		return "Tutorial Island is completed!";
 	}
 
 	@Override
 	public GoalList getGoals()
 	{
-		return new GoalList(new InfiniteGoal());
+		return null;
 	}
 
 	@Override
@@ -52,18 +56,18 @@ public class OrionTutorial extends Mission
 	@Override
 	public int execute()
 	{
+		current = states.getValid();
 		return 600;
 	}
 
 	@Override
 	public void onMissionStart()
 	{
-		
+		states = new TutorialStates(this);
 	}
 
 	@Override
 	public void resetPaint()
-	{
-	}
+	{}
 
 }
