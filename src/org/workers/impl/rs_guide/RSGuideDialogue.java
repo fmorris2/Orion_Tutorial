@@ -19,7 +19,7 @@ public class RSGuideDialogue extends TutorialWorker
 	@Override
 	public boolean shouldExecute()
 	{
-		return false;
+		return true;
 	}
 
 }

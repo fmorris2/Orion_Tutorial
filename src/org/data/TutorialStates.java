@@ -17,7 +17,7 @@ public class TutorialStates
 		this.script = script;
 		STATES = new TutorialState[]
 		{
-			ts(new CharDesign(script), 1), ts(new RSGuideDialogue(script), 2),
+			ts(new CharDesign(script), 0), ts(new RSGuideDialogue(script), 0),
 			
 			
 			
