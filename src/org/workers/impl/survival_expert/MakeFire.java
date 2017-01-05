@@ -31,8 +31,8 @@ public class MakeFire extends TutorialWorker
 		script.log(this, false, "Closest free: " + closestFree);
 		if(closestFree != null)
 		{
-			script.log(this, false, "walk to closestFree");
-			if(walking.walk(closestFree) && Timing.waitCondition(() -> myPosition().equals(closestFree), 4000))
+			if(myPosition().equals(closestFree) ||
+					(walkUtils.walkTo(closestFree) && Timing.waitCondition(() -> myPosition().equals(closestFree), 4000)))
 			{
 				if(itemUtils.itemOnItem("Tinderbox", "Logs") && Timing.waitCondition(() -> myPlayer().isAnimating(), 2500))
 					Timing.waitCondition(() -> !inventory.contains("Logs"), 6500);
