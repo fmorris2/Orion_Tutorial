@@ -46,11 +46,16 @@ public class MakeFire extends TutorialWorker
 	{
 		Area lightableArea = new Area(myPosition().translate(-5, 5), myPosition().translate(5, -5));
 		List<Position> tiles = lightableArea.getPositions();
+		script.log(this, false, "lightable area total tiles: " + tiles.size());
+		
 		tiles.sort(posComparator());
 		
 		for(Position p : tiles)
+		{
+			script.log(this, false, "Checking tile " + p);
 			if(posUtils.isWalkable(p) && !objectUtils.isOnTile("Fire", p))
 				return p;
+		}
 		
 		return null;
 	}
