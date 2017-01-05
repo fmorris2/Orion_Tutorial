@@ -7,8 +7,11 @@ import org.workers.impl.rs_guide.CharacterDesign;
 import org.workers.impl.rs_guide.ClickOptionsTab;
 import org.workers.impl.rs_guide.ExitRunescapeGuide;
 import org.workers.impl.rs_guide.RSGuideDialogue;
+import org.workers.impl.survival_expert.CatchShrimps;
+import org.workers.impl.survival_expert.CookShrimps;
 import org.workers.impl.survival_expert.MakeFire;
 import org.workers.impl.survival_expert.OpenInventory;
+import org.workers.impl.survival_expert.OpenSkillsTab;
 import org.workers.impl.survival_expert.SurvivalExpertDialogue;
 import org.workers.impl.survival_expert.TutorialChopTree;
 
@@ -27,6 +30,8 @@ public class TutorialStates
 			ts(new ClickOptionsTab(script), 3), ts(new ExitRunescapeGuide(script), 10),
 			ts(new SurvivalExpertDialogue(script), 20, 70), ts(new OpenInventory(script), 30),
 			ts(new TutorialChopTree(script), 40, 50), ts(new MakeFire(script), 50),
+			ts(new OpenSkillsTab(script), 60), ts(new CatchShrimps(script), 80, 90),
+			ts(new CookShrimps(script), 90, 110),
 			
 			
 			
