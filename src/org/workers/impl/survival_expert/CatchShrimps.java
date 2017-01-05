@@ -16,6 +16,7 @@ public class CatchShrimps extends TutorialWorker
 	@Override
 	public boolean shouldExecute()
 	{
+		script.log(this, false, "Amount of Raw shrimps: " + inventory.getAmount("Raw shrimps"));
 		return inventory.getAmount("Raw shrimps") < 2;
 	}
 
