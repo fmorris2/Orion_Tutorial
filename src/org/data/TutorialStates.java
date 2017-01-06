@@ -9,6 +9,7 @@ import org.workers.impl.master_chef.ExitMasterChef;
 import org.workers.impl.master_chef.MakeDough;
 import org.workers.impl.master_chef.MasterChefDialogue;
 import org.workers.impl.master_chef.OpenMusicTab;
+import org.workers.impl.mining_instructor.MiningInstructorDialogue;
 import org.workers.impl.quest_guide.ClickEmotesTab;
 import org.workers.impl.quest_guide.ClickRun;
 import org.workers.impl.quest_guide.EnterQuestGuide;
@@ -52,7 +53,7 @@ public class TutorialStates
 			ts(new PerformEmote(script), 187), ts(new ClickOptionsTab(script), 190),
 			ts(new ClickRun(script), 200), ts(new EnterQuestGuide(script), 210),
 			ts(new QuestGuideDialogue(script), 220, 240), ts(new OpenQuestTab(script), 230),
-			ts(new ExitQuestGuide(script), 250),
+			ts(new ExitQuestGuide(script), 250), ts(new MiningInstructorDialogue(script), 260, 290, 330),
 			
 			
 			
