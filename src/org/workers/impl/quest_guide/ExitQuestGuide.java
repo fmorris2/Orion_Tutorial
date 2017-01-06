@@ -2,6 +2,7 @@ package org.workers.impl.quest_guide;
 
 import org.OrionTutorial;
 import org.osbot.rs07.api.map.Area;
+import org.osbot.rs07.api.map.Position;
 import org.workers.TutorialWorker;
 
 import viking.api.Timing;
@@ -9,7 +10,7 @@ import viking.api.Timing;
 public class ExitQuestGuide extends TutorialWorker
 {
 	private static final Area LADDER_AREA = new Area(3087, 3120, 3089, 3118);
-	
+	private static final Position INSTRUCTOR_POS = new Position(3081, 9508, 0);
 	
 	public ExitQuestGuide(OrionTutorial mission)
 	{
@@ -26,8 +27,9 @@ public class ExitQuestGuide extends TutorialWorker
 	public void work()
 	{
 		script.log(this, false, "Exit Quest Guide");
-		if(iFact.clickObject("Climb-down", "Ladder", LADDER_AREA).execute())
-			Timing.waitCondition(() -> myPosition().getY() > 9000, 4500);
+		if(iFact.clickObject("Climb-down", "Ladder", LADDER_AREA).execute() 
+				&& Timing.waitCondition(() -> myPosition().getY() > 9000, 4500))
+			walkUtils.walkTo(INSTRUCTOR_POS);
 	}
 
 }
