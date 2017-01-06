@@ -9,7 +9,12 @@ import org.workers.impl.master_chef.ExitMasterChef;
 import org.workers.impl.master_chef.MakeDough;
 import org.workers.impl.master_chef.MasterChefDialogue;
 import org.workers.impl.master_chef.OpenMusicTab;
+import org.workers.impl.mining_instructor.MineCopper;
+import org.workers.impl.mining_instructor.MineTin;
 import org.workers.impl.mining_instructor.MiningInstructorDialogue;
+import org.workers.impl.mining_instructor.ProspectCopper;
+import org.workers.impl.mining_instructor.ProspectTin;
+import org.workers.impl.mining_instructor.SmeltOre;
 import org.workers.impl.quest_guide.ClickEmotesTab;
 import org.workers.impl.quest_guide.ClickRun;
 import org.workers.impl.quest_guide.EnterQuestGuide;
@@ -54,6 +59,8 @@ public class TutorialStates
 			ts(new ClickRun(script), 200), ts(new EnterQuestGuide(script), 210),
 			ts(new QuestGuideDialogue(script), 220, 240), ts(new OpenQuestTab(script), 230),
 			ts(new ExitQuestGuide(script), 250), ts(new MiningInstructorDialogue(script), 260, 290, 330),
+			ts(new ProspectTin(script), 270), ts(new ProspectCopper(script), 280), ts(new MineTin(script), 300),
+			ts(new MineCopper(script), 310), ts(new SmeltOre(script), 320),
 			
 			
 			
