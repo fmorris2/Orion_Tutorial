@@ -25,6 +25,7 @@ public class CookShrimps extends TutorialWorker
 		script.log(this, false, "Cook shrimps");
 		long invAmt = inventory.getAmount("Raw shrimps");
 		
+		script.log(this, false, "itemOnObj");
 		if(iFact.itemOnObj("Raw shrimps", "Fire", 15).execute())
 			Timing.waitCondition(() -> inventory.getAmount("Raw shrimps") != invAmt, 6500);
 	} 
