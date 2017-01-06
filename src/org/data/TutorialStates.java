@@ -46,7 +46,7 @@ public class TutorialStates
 			ts(new SurvivalExpertDialogue(script), 20, 70), ts(new OpenInventory(script), 30),
 			ts(new TutorialChopTree(script), 40, 50), ts(new MakeFire(script), 50),
 			ts(new OpenSkillsTab(script), 60), ts(new CatchShrimps(script), 80, 90),
-			ts(new CookShrimps(script), 90, 110), ts(new ExitSurvivalExpert(script), 120),
+			ts(new CookShrimps(script), 90, 100, 110), ts(new ExitSurvivalExpert(script), 120),
 			ts(new EnterMasterChef(script), 130), ts(new MasterChefDialogue(script), 140),
 			ts(new MakeDough(script), 150), ts(new CookDough(script), 160), ts(new OpenMusicTab(script), 170),
 			ts(new ExitMasterChef(script), 180), ts(new ClickEmotesTab(script), 183),

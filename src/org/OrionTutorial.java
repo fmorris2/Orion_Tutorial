@@ -2,6 +2,7 @@ package org;
 
 import org.data.TutorialState;
 import org.data.TutorialStates;
+import org.osbot.rs07.api.ui.RS2Widget;
 
 import viking.framework.goal.GoalList;
 import viking.framework.mission.Mission;
@@ -9,6 +10,8 @@ import viking.framework.script.VikingScript;
 
 public class OrionTutorial extends Mission
 {	
+	private static final int[][] CONT_INTERS = {{162, 33}, {229, 1}};
+	
 	private TutorialStates states;
 	private TutorialState current;
 	
@@ -56,11 +59,23 @@ public class OrionTutorial extends Mission
 	@Override
 	public int execute()
 	{
+		generalChecks();
+		
 		current = states.getValid();
 		if(current != null)
 			current.execute();
 		
 		return 600;
+	}
+	
+	private void generalChecks()
+	{
+		for(int i = 0; i < CONT_INTERS.length; i++)
+		{
+			RS2Widget widget = widgets.get(CONT_INTERS[i][0], CONT_INTERS[i][1]);
+			if(widget != null)
+				widget.interact();
+		}
 	}
 
 	@Override
