@@ -3,6 +3,7 @@ package org.data;
 import org.OrionTutorial;
 import org.workers.TutorialWorker;
 import org.workers.impl.TutorialDone;
+import org.workers.impl.master_chef.EnterMasterChef;
 import org.workers.impl.rs_guide.CharacterDesign;
 import org.workers.impl.rs_guide.ClickOptionsTab;
 import org.workers.impl.rs_guide.ExitRunescapeGuide;
@@ -33,7 +34,7 @@ public class TutorialStates
 			ts(new TutorialChopTree(script), 40, 50), ts(new MakeFire(script), 50),
 			ts(new OpenSkillsTab(script), 60), ts(new CatchShrimps(script), 80, 90),
 			ts(new CookShrimps(script), 90, 110), ts(new ExitSurvivalExpert(script), 120),
-			
+			ts(new EnterMasterChef(script), 130),
 			
 			
 			
