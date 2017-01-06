@@ -26,7 +26,7 @@ public class ExitSurvivalExpert extends TutorialWorker
 	{
 		script.log(this, false, "Exit Survival Expert");
 		if(iFact.clickObject("Open", "Gate", GATE_AREA).execute())
-			Timing.waitCondition(() -> myPosition().getX() > 3090, 6500);
+			Timing.waitCondition(() -> myPosition().getX() < 3090, 6500);
 	}
 
 }
