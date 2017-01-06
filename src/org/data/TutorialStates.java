@@ -11,8 +11,11 @@ import org.workers.impl.master_chef.MasterChefDialogue;
 import org.workers.impl.master_chef.OpenMusicTab;
 import org.workers.impl.quest_guide.ClickEmotesTab;
 import org.workers.impl.quest_guide.ClickRun;
+import org.workers.impl.quest_guide.EnterQuestGuide;
+import org.workers.impl.quest_guide.ExitQuestGuide;
+import org.workers.impl.quest_guide.OpenQuestTab;
 import org.workers.impl.quest_guide.PerformEmote;
-import org.workers.impl.quest_guide.RunToQuestGuide;
+import org.workers.impl.quest_guide.QuestGuideDialogue;
 import org.workers.impl.rs_guide.CharacterDesign;
 import org.workers.impl.rs_guide.ClickOptionsTab;
 import org.workers.impl.rs_guide.ExitRunescapeGuide;
@@ -47,7 +50,9 @@ public class TutorialStates
 			ts(new MakeDough(script), 150), ts(new CookDough(script), 160), ts(new OpenMusicTab(script), 170),
 			ts(new ExitMasterChef(script), 180), ts(new ClickEmotesTab(script), 183),
 			ts(new PerformEmote(script), 187), ts(new ClickOptionsTab(script), 190),
-			ts(new ClickRun(script), 200), ts(new RunToQuestGuide(script), 210),
+			ts(new ClickRun(script), 200), ts(new EnterQuestGuide(script), 210),
+			ts(new QuestGuideDialogue(script), 220, 240), ts(new OpenQuestTab(script), 230),
+			ts(new ExitQuestGuide(script), 250),
 			
 			
 			

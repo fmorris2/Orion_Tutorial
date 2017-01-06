@@ -3,10 +3,10 @@ package org.workers.impl.quest_guide;
 import org.OrionTutorial;
 import org.workers.TutorialWorker;
 
-public class RunToQuestGuide extends TutorialWorker
+public class ExitQuestGuide extends TutorialWorker
 {
 
-	public RunToQuestGuide(OrionTutorial mission)
+	public ExitQuestGuide(OrionTutorial mission)
 	{
 		super(mission);
 	}
@@ -20,7 +20,7 @@ public class RunToQuestGuide extends TutorialWorker
 	@Override
 	public void work()
 	{
-		script.log(this, false, "Run to quest guide");
+		script.log(this, false, "Exit Quest Guide");
 	}
 
 }
