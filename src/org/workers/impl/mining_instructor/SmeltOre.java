@@ -23,7 +23,7 @@ public class SmeltOre extends TutorialWorker
 	{
 		script.log(this, false, "Smelt ore");
 		
-		if(iFact.itemOnObj("Copper ore", "Furnace", 5).execute())
+		if(iFact.itemOnObj("Copper ore", "Furnace", 20).execute())
 			Timing.waitCondition(() -> inventory.contains("Bronze bar"), 5000);
 	}
 
