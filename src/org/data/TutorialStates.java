@@ -6,8 +6,10 @@ import org.workers.impl.TutorialDone;
 import org.workers.impl.combat_instructor.ClickCombatTab;
 import org.workers.impl.combat_instructor.CombatInstructorDialogue;
 import org.workers.impl.combat_instructor.EnterRatCage;
+import org.workers.impl.combat_instructor.MeleeRat;
 import org.workers.impl.combat_instructor.OpenEquipmentStats;
 import org.workers.impl.combat_instructor.OpenEquipmentTab;
+import org.workers.impl.combat_instructor.RangeRat;
 import org.workers.impl.combat_instructor.WieldDagger;
 import org.workers.impl.combat_instructor.WieldSwordAndShield;
 import org.workers.impl.master_chef.CookDough;
@@ -73,7 +75,7 @@ public class TutorialStates
 			ts(new ExitMiningInstructor(script), 360), ts(new CombatInstructorDialogue(script), 370, 410, 470),
 			ts(new OpenEquipmentTab(script), 390), ts(new OpenEquipmentStats(script), 400), ts(new WieldDagger(script), 405),
 			ts(new WieldSwordAndShield(script), 420), ts(new ClickCombatTab(script), 430), ts(new EnterRatCage(script), 440),
-			
+			ts(new MeleeRat(script), 450, 460), ts(new RangeRat(script), 480, 490),
 			
 			
 			
