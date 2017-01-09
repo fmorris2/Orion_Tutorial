@@ -63,7 +63,7 @@ public class TutorialStates
 			ts(new QuestGuideDialogue(script), 220, 240), ts(new OpenQuestTab(script), 230),
 			ts(new ExitQuestGuide(script), 250), ts(new MiningInstructorDialogue(script), 260, 290, 330),
 			ts(new ProspectTin(script), 270), ts(new ProspectCopper(script), 280), ts(new MineTin(script), 300),
-			ts(new MineCopper(script), 310), ts(new SmeltOre(script), 320), ts(new SmithDagger(script), 340),
+			ts(new MineCopper(script), 310), ts(new SmeltOre(script), 320), ts(new SmithDagger(script), 340, 350),
 			ts(new ExitMiningInstructor(script), 360), ts(new CombatInstructorDialogue(script), 370, 410, 470),
 			
 			
