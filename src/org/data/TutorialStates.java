@@ -3,7 +3,13 @@ package org.data;
 import org.OrionTutorial;
 import org.workers.TutorialWorker;
 import org.workers.impl.TutorialDone;
+import org.workers.impl.combat_instructor.ClickCombatTab;
 import org.workers.impl.combat_instructor.CombatInstructorDialogue;
+import org.workers.impl.combat_instructor.EnterRatCage;
+import org.workers.impl.combat_instructor.OpenEquipmentStats;
+import org.workers.impl.combat_instructor.OpenEquipmentTab;
+import org.workers.impl.combat_instructor.WieldDagger;
+import org.workers.impl.combat_instructor.WieldSwordAndShield;
 import org.workers.impl.master_chef.CookDough;
 import org.workers.impl.master_chef.EnterMasterChef;
 import org.workers.impl.master_chef.ExitMasterChef;
@@ -65,6 +71,8 @@ public class TutorialStates
 			ts(new ProspectTin(script), 270), ts(new ProspectCopper(script), 280), ts(new MineTin(script), 300),
 			ts(new MineCopper(script), 310), ts(new SmeltOre(script), 320), ts(new SmithDagger(script), 340, 350),
 			ts(new ExitMiningInstructor(script), 360), ts(new CombatInstructorDialogue(script), 370, 410, 470),
+			ts(new OpenEquipmentTab(script), 390), ts(new OpenEquipmentStats(script), 400), ts(new WieldDagger(script), 405),
+			ts(new WieldSwordAndShield(script), 420), ts(new ClickCombatTab(script), 430), ts(new EnterRatCage(script), 440),
 			
 			
 			
