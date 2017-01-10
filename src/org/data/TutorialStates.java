@@ -7,6 +7,7 @@ import org.workers.impl.bank_stage.ExitBankStage;
 import org.workers.impl.bank_stage.PollBooth;
 import org.workers.impl.bank_stage.TOpenBank;
 import org.workers.impl.brother_brace.BrotherBraceDialogue;
+import org.workers.impl.brother_brace.ExitBrotherBrace;
 import org.workers.impl.brother_brace.OpenFriendsTab;
 import org.workers.impl.brother_brace.OpenIgnoreTab;
 import org.workers.impl.brother_brace.OpenPrayerTab;
@@ -89,7 +90,7 @@ public class TutorialStates
 			ts(new TOpenBank(script), 510), ts(new PollBooth(script), 520), ts(new ExitBankStage(script), 525),
 			ts(new FinancialAdvisorDialogue(script), 530), ts(new ExitFinancialAdvisor(script), 540),
 			ts(new BrotherBraceDialogue(script), 550, 570, 600), ts(new OpenPrayerTab(script), 560),
-			ts(new OpenFriendsTab(script), 580), ts(new OpenIgnoreTab(script), 590),
+			ts(new OpenFriendsTab(script), 580), ts(new OpenIgnoreTab(script), 590), ts(new ExitBrotherBrace(script), 610),
 			
 			
 			
