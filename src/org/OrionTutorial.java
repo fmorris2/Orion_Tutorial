@@ -9,7 +9,9 @@ import viking.framework.mission.Mission;
 import viking.framework.script.VikingScript;
 
 public class OrionTutorial extends Mission
-{
+{	
+	private static final int[][] CONT_INTERS = {{162, 33}, {229, 1}};
+	
 	private TutorialStates states;
 	private TutorialState current;
 	
@@ -68,6 +70,13 @@ public class OrionTutorial extends Mission
 	
 	private void generalChecks()
 	{
+		for(int i = 0; i < CONT_INTERS.length; i++)
+		{
+			RS2Widget widget = widgets.get(CONT_INTERS[i][0], CONT_INTERS[i][1]);
+			if(widget != null)
+				widget.interact();
+		}
+		
 		RS2Widget widget = widgets.getWidgetContainingText("Click here to continue");
 		if(widget != null)
 			widget.interact();
