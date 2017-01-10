@@ -2,6 +2,7 @@ package org.workers.impl.brother_brace;
 
 import org.OrionTutorial;
 import org.osbot.rs07.api.map.Position;
+import org.osbot.rs07.event.WebWalkEvent;
 import org.workers.TutorialWorker;
 
 public class BrotherBraceDialogue extends TutorialWorker
@@ -24,10 +25,17 @@ public class BrotherBraceDialogue extends TutorialWorker
 	public void work()
 	{
 		script.log(this, false, "Brother Brace Dialogue");
-		if(myPosition().distance(DIALOGUE_POS) > DIST_THRESH)
-			walkUtils.walkTo(DIALOGUE_POS);
-		else
-			iFact.dialogue("Talk-to", "Brother Brace", 15).execute();
+		try
+		{
+			if(myPosition().distance(DIALOGUE_POS) > DIST_THRESH)
+				new WebWalkEvent(DIALOGUE_POS).execute();
+			else
+				iFact.dialogue("Talk-to", "Brother Brace", 15).execute();
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
 	}
 
 }
