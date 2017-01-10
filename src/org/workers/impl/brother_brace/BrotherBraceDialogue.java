@@ -2,7 +2,6 @@ package org.workers.impl.brother_brace;
 
 import org.OrionTutorial;
 import org.osbot.rs07.api.map.Position;
-import org.osbot.rs07.event.WebWalkEvent;
 import org.workers.TutorialWorker;
 
 public class BrotherBraceDialogue extends TutorialWorker
@@ -28,7 +27,7 @@ public class BrotherBraceDialogue extends TutorialWorker
 		try
 		{
 			if(myPosition().distance(DIALOGUE_POS) > DIST_THRESH)
-				new WebWalkEvent(DIALOGUE_POS).execute();
+				walking.webWalk(DIALOGUE_POS);
 			else
 				iFact.dialogue("Talk-to", "Brother Brace", 15).execute();
 		}
