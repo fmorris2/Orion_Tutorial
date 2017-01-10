@@ -24,17 +24,11 @@ public class BrotherBraceDialogue extends TutorialWorker
 	public void work()
 	{
 		script.log(this, false, "Brother Brace Dialogue");
-		try
-		{
-			if(myPosition().distance(DIALOGUE_POS) > DIST_THRESH)
-				walking.webWalk(DIALOGUE_POS);
-			else
-				iFact.dialogue("Talk-to", "Brother Brace", 15).execute();
-		}
-		catch(Exception e)
-		{
-			e.printStackTrace();
-		}
+		
+		if(myPosition().distance(DIALOGUE_POS) > DIST_THRESH)
+			walking.webWalk(DIALOGUE_POS);
+		else
+			iFact.dialogue("Talk-to", "Brother Brace", 15).execute();
 	}
 
 }
