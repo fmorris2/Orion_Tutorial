@@ -95,11 +95,7 @@ public class TutorialStates
 			ts(new BrotherBraceDialogue(script), 550, 570, 600), ts(new OpenPrayerTab(script), 560),
 			ts(new OpenFriendsTab(script), 580), ts(new OpenIgnoreTab(script), 590), ts(new ExitBrotherBrace(script), 610),
 			ts(new MagicInstructorDialogue(script), 620, 640, 670), ts(new ClickMagicTab(script), 630),
-			ts(new CastAirStrike(script), 650, 660),
-			
-			
-			
-			ts(new TutorialDone(script), 1000)
+			ts(new CastAirStrike(script), 650, 660), ts(new TutorialDone(script), 1000)
 		};
 	}
 	
