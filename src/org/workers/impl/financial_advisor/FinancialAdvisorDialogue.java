@@ -21,6 +21,7 @@ public class FinancialAdvisorDialogue extends TutorialWorker
 	public void work()
 	{
 		script.log(this, false, "Financial Advisor Dialogue");
+		iFact.dialogue("Talk-to", "Financial Advisor", 7).execute();
 	}
 
 }

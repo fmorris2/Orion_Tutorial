@@ -6,6 +6,10 @@ import org.workers.impl.TutorialDone;
 import org.workers.impl.bank_stage.ExitBankStage;
 import org.workers.impl.bank_stage.PollBooth;
 import org.workers.impl.bank_stage.TOpenBank;
+import org.workers.impl.brother_brace.BrotherBraceDialogue;
+import org.workers.impl.brother_brace.OpenFriendsTab;
+import org.workers.impl.brother_brace.OpenIgnoreTab;
+import org.workers.impl.brother_brace.OpenPrayerTab;
 import org.workers.impl.combat_instructor.ClickCombatTab;
 import org.workers.impl.combat_instructor.CombatInstructorDialogue;
 import org.workers.impl.combat_instructor.EnterRatCage;
@@ -16,6 +20,7 @@ import org.workers.impl.combat_instructor.OpenEquipmentTab;
 import org.workers.impl.combat_instructor.RangeRat;
 import org.workers.impl.combat_instructor.WieldDagger;
 import org.workers.impl.combat_instructor.WieldSwordAndShield;
+import org.workers.impl.financial_advisor.ExitFinancialAdvisor;
 import org.workers.impl.financial_advisor.FinancialAdvisorDialogue;
 import org.workers.impl.master_chef.CookDough;
 import org.workers.impl.master_chef.EnterMasterChef;
@@ -82,7 +87,9 @@ public class TutorialStates
 			ts(new WieldSwordAndShield(script), 420), ts(new ClickCombatTab(script), 430), ts(new EnterRatCage(script), 440),
 			ts(new MeleeRat(script), 450, 460), ts(new RangeRat(script), 480, 490), ts(new ExitCombatInstructor(script), 500),
 			ts(new TOpenBank(script), 510), ts(new PollBooth(script), 520), ts(new ExitBankStage(script), 525),
-			ts(new FinancialAdvisorDialogue(script), 530),
+			ts(new FinancialAdvisorDialogue(script), 530), ts(new ExitFinancialAdvisor(script), 540),
+			ts(new BrotherBraceDialogue(script), 550, 570, 600), ts(new OpenPrayerTab(script), 560),
+			ts(new OpenFriendsTab(script), 580), ts(new OpenIgnoreTab(script), 590),
 			
 			
 			
