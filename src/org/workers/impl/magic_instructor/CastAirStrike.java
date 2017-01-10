@@ -37,8 +37,9 @@ public class CastAirStrike extends TutorialWorker
 		NPC targ = npcs.closest(VFilters.and(new NameFilter<NPC>("Chicken"), filters.ABLE_TO_ATTACK_NPC));
 		int cacheConf = configs.get(TutorialState.CONFIG_ID);
 		
-		if(!myPosition().equals(TO_CAST) && camera.toPosition(TO_CAST))
+		if(!myPosition().equals(TO_CAST))
 		{
+			camera.toPosition(TO_CAST);
 			MainScreenTileDestination mainScreenSpot = new MainScreenTileDestination(bot, TO_CAST);
 			if(mouse.click(mainScreenSpot))
 				Timing.waitCondition(() -> myPosition().equals(TO_CAST), 4500);
