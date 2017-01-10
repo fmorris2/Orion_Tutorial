@@ -23,6 +23,9 @@ import org.workers.impl.combat_instructor.WieldDagger;
 import org.workers.impl.combat_instructor.WieldSwordAndShield;
 import org.workers.impl.financial_advisor.ExitFinancialAdvisor;
 import org.workers.impl.financial_advisor.FinancialAdvisorDialogue;
+import org.workers.impl.magic_instructor.CastAirStrike;
+import org.workers.impl.magic_instructor.ClickMagicTab;
+import org.workers.impl.magic_instructor.MagicInstructorDialogue;
 import org.workers.impl.master_chef.CookDough;
 import org.workers.impl.master_chef.EnterMasterChef;
 import org.workers.impl.master_chef.ExitMasterChef;
@@ -91,7 +94,8 @@ public class TutorialStates
 			ts(new FinancialAdvisorDialogue(script), 530), ts(new ExitFinancialAdvisor(script), 540),
 			ts(new BrotherBraceDialogue(script), 550, 570, 600), ts(new OpenPrayerTab(script), 560),
 			ts(new OpenFriendsTab(script), 580), ts(new OpenIgnoreTab(script), 590), ts(new ExitBrotherBrace(script), 610),
-			
+			ts(new MagicInstructorDialogue(script), 620, 640, 670), ts(new ClickMagicTab(script), 630),
+			ts(new CastAirStrike(script), 650, 660),
 			
 			
 			

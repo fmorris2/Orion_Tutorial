@@ -27,7 +27,7 @@ public class BrotherBraceDialogue extends TutorialWorker
 		if(myPosition().distance(DIALOGUE_POS) > DIST_THRESH)
 			walkUtils.walkTo(DIALOGUE_POS);
 		else
-			iFact.dialogue("Talk-to", "Brother Brace", 30).execute();
+			iFact.dialogue("Talk-to", "Brother Brace", 15).execute();
 	}
 
 }
