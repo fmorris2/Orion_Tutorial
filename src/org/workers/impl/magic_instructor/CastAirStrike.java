@@ -6,6 +6,7 @@ import org.osbot.rs07.api.filter.NameFilter;
 import org.osbot.rs07.api.map.Position;
 import org.osbot.rs07.api.model.NPC;
 import org.osbot.rs07.api.ui.Spells;
+import org.osbot.rs07.input.mouse.MainScreenTileDestination;
 import org.workers.TutorialWorker;
 
 import viking.api.Timing;
@@ -35,8 +36,13 @@ public class CastAirStrike extends TutorialWorker
 		script.log(this, false, "Cast Air Strike");
 		NPC targ = npcs.closest(VFilters.and(new NameFilter<NPC>("Chicken"), filters.ABLE_TO_ATTACK_NPC));
 		int cacheConf = configs.get(TutorialState.CONFIG_ID);
-		if(!myPosition().equals(TO_CAST))
-			walkUtils.walkTo(TO_CAST);
+		
+		if(!myPosition().equals(TO_CAST) && camera.toPosition(TO_CAST))
+		{
+			MainScreenTileDestination mainScreenSpot = new MainScreenTileDestination(bot, TO_CAST);
+			if(mouse.click(mainScreenSpot))
+				Timing.waitCondition(() -> myPosition().equals(TO_CAST), 4500);
+		}
 		else if(magic.castSpellOnEntity(Spells.NormalSpells.WIND_STRIKE, targ))
 			Timing.waitCondition(() -> cacheConf != configs.get(TutorialState.CONFIG_ID), 4500);		
 	}
