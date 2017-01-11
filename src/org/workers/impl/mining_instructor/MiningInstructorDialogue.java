@@ -19,8 +19,12 @@ public class MiningInstructorDialogue extends TutorialWorker
 
 	@Override
 	public void work()
-	{
+	{		
 		script.log(this, false, "Mining Instructor Dialogue");
+		
+		if(myPosition().getY() < 9000) //up ladder
+			iFact.clickObject("Climb-down", "Ladder", 10).execute();
+		
 		iFact.dialogue("Talk-to", "Mining Instructor", 25).execute();
 	}
 
