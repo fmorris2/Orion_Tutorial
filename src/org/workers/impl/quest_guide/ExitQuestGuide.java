@@ -10,6 +10,7 @@ import viking.api.Timing;
 public class ExitQuestGuide extends TutorialWorker
 {
 	private static final Area LADDER_AREA = new Area(3087, 3120, 3089, 3118);
+	private static final Position FALLBACK_POS = new Position(3088, 3120, 0);
 	private static final Position INSTRUCTOR_POS = new Position(3081, 9508, 0);
 	
 	public ExitQuestGuide(OrionTutorial mission)
@@ -27,7 +28,7 @@ public class ExitQuestGuide extends TutorialWorker
 	public void work()
 	{
 		script.log(this, false, "Exit Quest Guide");
-		if(iFact.clickObject("Climb-down", "Ladder", LADDER_AREA).execute() 
+		if(iFact.clickObject("Climb-down", "Ladder", LADDER_AREA, FALLBACK_POS).execute() 
 				&& Timing.waitCondition(() -> myPosition().getY() > 9000, 4500))
 			walkUtils.walkTo(INSTRUCTOR_POS);
 	}

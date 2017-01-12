@@ -25,6 +25,11 @@ public class CookDough extends TutorialWorker
 		script.log(this, false, "Cook dough");
 		if(iFact.itemOnObj("Bread dough", "Range", 12).execute())
 			Timing.waitCondition(() -> inventory.contains("Bread"), 3500);
+		else
+		{
+			camera.movePitch(random(0, 360));
+			camera.moveYaw(random(0, 100));
+		}
 	}
 
 }
