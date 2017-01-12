@@ -28,6 +28,10 @@ public class ExitBankStage extends TutorialWorker
 	public void work()
 	{
 		script.log(this, false, "Exit bank stage");
+		
+		if(dialogues.isPendingContinuation())
+			dialogues.clickContinue();
+		
 		RS2Widget pollBooth = widgets.getWidgetContainingText("Close");
 		if(pollBooth != null)
 			pollBooth.interact();
