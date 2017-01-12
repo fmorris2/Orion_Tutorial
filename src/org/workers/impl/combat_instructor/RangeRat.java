@@ -8,6 +8,7 @@ import org.workers.TutorialWorker;
 
 import viking.api.Timing;
 import viking.api.filter.VFilters;
+import viking.api.interaction.impl.npc.ClickNpc;
 
 public class RangeRat extends TutorialWorker
 {
@@ -36,7 +37,9 @@ public class RangeRat extends TutorialWorker
 			else
 			{
 				NPC targ = npcs.closest(VFilters.and(new NameFilter<NPC>("Giant rat"), filters.ABLE_TO_ATTACK_NPC));
-				if(targ != null && iFact.clickNpc("Attack", targ).execute())
+				ClickNpc clickNpc = iFact.clickNpc("Attack", targ);
+				clickNpc.setNeedsToReach(false);
+				if(targ != null && clickNpc.execute())
 				{
 					if(!Timing.waitCondition(() -> combat.isFighting(), 5000))
 						walkUtils.walkTo(RANGE_POS);
