@@ -29,6 +29,11 @@ public class EnterQuestGuide extends TutorialWorker
 		script.log(this, false, "Run to quest guide");
 		if(iFact.clickObject("Open", "Door", DOOR_AREA).execute())
 			Timing.waitCondition(() -> myPosition().equals(ENTER_POS), 6500);
+		else
+		{
+			camera.movePitch(random(0, 360));
+			camera.moveYaw(random(0, 360));
+		}
 	}
 
 }

@@ -31,6 +31,11 @@ public class ExitQuestGuide extends TutorialWorker
 		if(iFact.clickObject("Climb-down", "Ladder", LADDER_AREA, FALLBACK_POS).execute() 
 				&& Timing.waitCondition(() -> myPosition().getY() > 9000, 4500))
 			walkUtils.walkTo(INSTRUCTOR_POS);
+		else
+		{
+			camera.movePitch(random(0, 360));
+			camera.moveYaw(random(0, 360));
+		}
 	}
 
 }
