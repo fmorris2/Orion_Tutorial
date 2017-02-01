@@ -28,7 +28,9 @@ public class ExitQuestGuide extends TutorialWorker
 	public void work()
 	{
 		script.log(this, false, "Exit Quest Guide");
-		if(iFact.clickObject("Climb-down", "Ladder", LADDER_AREA, FALLBACK_POS).execute() 
+		if(myPosition().getZ() == 1 && iFact.clickObject("Climb-down", "Staircase", 10).execute())
+			Timing.waitCondition(() -> myPosition().getZ() == 0, 4500);
+		else if(iFact.clickObject("Climb-down", "Ladder", LADDER_AREA, FALLBACK_POS).execute() 
 				&& Timing.waitCondition(() -> myPosition().getY() > 9000, 4500))
 			walkUtils.walkTo(INSTRUCTOR_POS);
 		else
