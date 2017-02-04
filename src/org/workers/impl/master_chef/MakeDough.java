@@ -23,8 +23,11 @@ public class MakeDough extends TutorialWorker
 	public void work()
 	{
 		script.log(this, false, "Make dough");
-		if(itemUtils.itemOnItem("Pot of flour", "Bucket of water"))
-			Timing.waitCondition(() -> inventory.contains("Bread dough"), 3500);
+		if(itemUtils.itemOnItem("Pot of flour", "Bucket of water") && Timing.waitCondition(() -> inventory.contains("Bread dough"), 3500))
+		{
+			if(mission.ORION_MAIN != null)
+				mission.ORION_MAIN.receiveCommand("kill");
+		}
 	}
 
 }

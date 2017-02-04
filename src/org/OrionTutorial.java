@@ -4,6 +4,7 @@ import org.data.TutorialState;
 import org.data.TutorialStates;
 import org.osbot.rs07.api.ui.RS2Widget;
 
+import viking.framework.command.CommandReceiver;
 import viking.framework.goal.GoalList;
 import viking.framework.mission.Mission;
 import viking.framework.script.VikingScript;
@@ -12,12 +13,18 @@ public class OrionTutorial extends Mission
 {	
 	private static final int[][] CONT_INTERS = {{162, 33}, {229, 1}};
 	
+	public final CommandReceiver ORION_MAIN;
+	
 	private TutorialStates states;
 	private TutorialState current;
 	
 	public OrionTutorial(VikingScript script)
 	{
 		super(script);
+		if(script instanceof CommandReceiver)
+			ORION_MAIN = (CommandReceiver)script;
+		else
+			ORION_MAIN = null;
 	}
 
 	@Override

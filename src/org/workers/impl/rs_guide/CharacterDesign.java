@@ -42,10 +42,11 @@ public class CharacterDesign extends TutorialWorker
 		}
 		
 		RS2Widget acceptButton = widgets.get(INTER_MASTER, ACCEPT_BUTTON);
-		if(acceptButton != null && acceptButton.interact())
-			Timing.waitCondition(() -> !shouldExecute(), 2000);
-		
-		//TODO KILL INSTANCE TO AVOID LOCKS
+		if(acceptButton != null && acceptButton.interact() && Timing.waitCondition(() -> !shouldExecute(), 2000))
+		{
+			if(mission.ORION_MAIN != null)
+				mission.ORION_MAIN.receiveCommand("kill");
+		}
 		
 	}
 
