@@ -24,8 +24,10 @@ public class ClickCombatTab extends TutorialWorker
 		script.log(this, false, "Click Combat Tab");
 		if(tabs.open(Tab.ATTACK))
 		{
+			/*
 			if(mission.ORION_MAIN != null)
 				mission.ORION_MAIN.receiveCommand("kill");
+			*/
 		}
 	}
 
